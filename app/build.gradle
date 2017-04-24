@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.wantefuapp.musen"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'QQ_APP_ID', '"1105500229"'
+        buildConfigField 'String', 'QQ_APP_KEY', '"UvtMKprZdTcWgISQ"'
+        buildConfigField 'String', 'WX_APP_ID', '"wx6aae486df7c4aab9"'
+        buildConfigField 'String', 'WX_APP_Secret', '"b3a29635eca32f9ed5ca19e1b4a9cc6f"'
+        buildConfigField 'String', 'UMENG_APPKEY', '"58d89b7f677baa5a3d000fe9"'
+        buildConfigField 'String', 'XinLang_APPKEY', '"1003992900"'
+        buildConfigField 'String', 'XinLang_Secret', '"e50e4e7e3bbb565738e129175ae8004b"'
+        manifestPlaceholders = [QQ_APP_ID: 'tencent1105500229', UMENG_APPKEY: '58d89b7f677baa5a3d000fe9', UMENG_MESSAGE_SECRET: '2487c9ada6aadd96403e0bf758af306e']
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+    compile project(':android_share')
+    compile 'com.jakewharton:butterknife:5.1.1'
+}

@@ -52,7 +52,7 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- 注册新浪和微信的回调Activity -->
-				<activity
+	<activity
             android:name="yourpackage.wxapi.WXEntryActivity"
 						
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -74,8 +74,7 @@
         </activity>
         
 5.在Application中添加代码块
-
-     {
+     	{
      
         PlatformConfig.setQQZone(BuildConfig.QQ_APP_ID, BuildConfig.QQ_APP_KEY);
         
@@ -83,7 +82,7 @@
         
         PlatformConfig.setSinaWeibo(BuildConfig.XinLang_APPKEY, BuildConfig.XinLang_Secret,"http://sns.whalecloud.com");
         
-    }
+   	 }
   
   onCreate中初始化SDK
   UMShareAPI.get(this);

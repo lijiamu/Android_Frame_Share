@@ -39,10 +39,8 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="${QQ_APP_ID}" />
             </intent-filter>
         </activity>
@@ -51,18 +49,15 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+	    
         <!-- 注册新浪和微信的回调Activity -->
 	<activity
-            android:name="yourpackage.wxapi.WXEntryActivity"
-						
-            android:configChanges="keyboardHidden|orientation|screenSize"
-						
-            android:exported="true"
-						
-            android:screenOrientation="portrait"
-						
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-					
+            android:name="yourpackage.wxapi.WXEntryActivity"				
+            android:configChanges="keyboardHidden|orientation|screenSize"				
+            android:exported="true"				
+            android:screenOrientation="portrait"				
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />	
+	    
         <activity
             android:name="yourpackage.WBShareActivity"
             android:configChanges="keyboardHidden|orientation"

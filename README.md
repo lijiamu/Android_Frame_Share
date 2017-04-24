@@ -26,7 +26,7 @@
     
 4.注册Umeng 分享所需Activity和meta-data
 
- <!-- 分享相关 -->
+     <!-- 分享相关 -->
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="${UMENG_APPKEY}" />
@@ -51,21 +51,19 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <!-- 注册新浪和微信的回调Activity -->
         <activity
-            android:name="你的包名.wxapi.WXEntryActivity"
+            android:name="yourpackage.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="你的包名.WBShareActivity"
+            android:name="yourpackage.WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -73,9 +71,13 @@
 5.在Application中添加代码块
 
      {
+     
         PlatformConfig.setQQZone(BuildConfig.QQ_APP_ID, BuildConfig.QQ_APP_KEY);
+        
         PlatformConfig.setWeixin(BuildConfig.WX_APP_ID, BuildConfig.WX_APP_Secret);
+        
         PlatformConfig.setSinaWeibo(BuildConfig.XinLang_APPKEY, BuildConfig.XinLang_Secret,"http://sns.whalecloud.com");
+        
     }
   
   onCreate中初始化SDK
@@ -89,10 +91,13 @@
    
    b.使用分享工具类
    
-   实现ShareUtil.UmShareBack （PS：主要是监听分享失败或者成功的回调）. 创建ShareUtil 对象，调用ShareUtil 对象.Share()方法，在当前Activity重写
+   实现ShareUtil.UmShareBack （PS：主要是监听分享失败或者成功的回调）.
+   创建ShareUtil 对象，调用ShareUtil 对象.Share()方法， 在当前Activity重写
    
-   public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        public void onActivityResult(int requestCode, int resultCode, Intent data) {
+  
         super.onActivityResult(requestCode, resultCode, data);
+        
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-    }
+       }
  

@@ -52,12 +52,17 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- 注册新浪和微信的回调Activity -->
-        <activity
+				<activity
             android:name="yourpackage.wxapi.WXEntryActivity"
+						
             android:configChanges="keyboardHidden|orientation|screenSize"
+						
             android:exported="true"
+						
             android:screenOrientation="portrait"
+						
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+					
         <activity
             android:name="yourpackage.WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
